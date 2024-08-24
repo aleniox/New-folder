@@ -21,7 +21,7 @@ GROQ_API_KEY="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"
 dt = datetime.datetime.now()
 formatted = dt.strftime("%A, %B %d, %Y %I:%M:%S %p")
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-port = os.getenv("PORT"
+port = os.getenv("PORT")
 serverAddressPort = ("127.0.0.1", port)
 llm = ChatGroq(temperature=0, model_name="llama-3.1-70b-versatile", api_key=GROQ_API_KEY)
 
