@@ -3,3 +3,4 @@ langchain_community
 langgraph
 duckduckgo_search
 langchain
+langchain_groq
