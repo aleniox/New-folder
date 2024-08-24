@@ -11,7 +11,7 @@ from typing_extensions import TypedDict
 from langchain_core.prompts import ChatPromptTemplate
 import pickle
 from huggingface_hub import hf_hub_download
-
+from dotenv import load_dotenv
 
 wrapper = DuckDuckGoSearchAPIWrapper(max_results=25)
 web_search_tool = DuckDuckGoSearchRun(api_wrapper=wrapper)
@@ -20,7 +20,8 @@ GROQ_API_KEY="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"
 dt = datetime.datetime.now()
 formatted = dt.strftime("%A, %B %d, %Y %I:%M:%S %p")
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-serverAddressPort = ("127.0.0.1", 4000)
+port = os.getenv("POST")
+serverAddressPort = ("127.0.0.1", port)
 llm = ChatGroq(temperature=0, model_name="llama-3.1-70b-versatile", api_key=GROQ_API_KEY)
 
 try:
