@@ -12,6 +12,7 @@ from langchain_core.prompts import ChatPromptTemplate
 import pickle
 from huggingface_hub import hf_hub_download
 from dotenv import load_dotenv
+import os
 
 wrapper = DuckDuckGoSearchAPIWrapper(max_results=25)
 web_search_tool = DuckDuckGoSearchRun(api_wrapper=wrapper)
